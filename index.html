@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday My Friend 🎂</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4 text-black relative">
+
+  <!-- Balloons -->
+  <div class="balloon bg-pink-400 left-8 top-20"></div>
+  <div class="balloon bg-purple-400 right-10 top-28" style="animation-delay:1s"></div>
+  <div class="balloon bg-yellow-300 left-1/4 bottom-16" style="animation-delay:2s"></div>
+  <div class="balloon bg-red-400 right-1/4 bottom-20" style="animation-delay:.5s"></div>
+
+  <main class="relative z-10 w-full max-w-3xl">
+
+    <div class="glass rounded-[2rem] p-6 sm:p-10 text-center min-h-[560px] flex items-center justify-center">
+
+      <!-- STEP 1 -->
+      <section class="step active w-full" data-step="0">
+
+        <p class="uppercase tracking-[.35em] text-sm text-black mb-4">
+          A little surprise for my amazing friend
+        </p>
+
+        <h1 class="font-love text-5xl sm:text-7xl text-black drop-shadow-lg mb-6">
+          Hey Bestie! 🥳
+        </h1>
+
+        <p class="text-lg sm:text-xl text-black/90 max-w-xl mx-auto mb-8">
+          Today is a special day because an amazing person like you came into this world.
+          I'm really lucky to have a friend like you! ❤️
+        </p>
+
+        <button
+          onclick="nextStep()"
+          class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">
+          Open Your Birthday Surprise 🎁
+        </button>
+
+      </section>
+
+
+      <!-- STEP 2 -->
+      <section class="step w-full" data-step="1">
+
+        <h2 class="font-love text-4xl sm:text-6xl mb-5">
+          Catch the Friendship Heart 💖
+        </h2>
+
+        <p class="mb-6 text-black/90">
+          Catch the floating heart 5 times to unlock your special birthday wish! 🎉
+        </p>
+
+        <div
+          class="relative h-72 rounded-3xl bg-white/15 overflow-hidden border border-white/20"
+          id="heartGame">
+
+          <button
+            id="catchHeart"
+            class="absolute text-5xl hover:scale-125 transition">
+            💖
+          </button>
+
+          <div class="absolute left-4 top-4 bg-white/25 px-4 py-2 rounded-full">
+            Caught:
+            <span id="score">0</span>/5
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STEP 3 -->
+      <section class="step w-full" data-step="2">
+
+        <h2 class="font-love text-4xl sm:text-6xl mb-7 uppercase">
+          A Gift For You 🎁
+        </h2>
+
+        <p class="mb-10 text-black/90">
+          Every great friend deserves a great birthday surprise! 😄
+          Tap the gift box.
+        </p>
+
+        <div class="gift-box" onclick="openGift(this)">
+          <div class="gift-lid"></div>
+        </div>
+
+        <p
+          id="giftMessage"
+          class="hidden mt-10 text-2xl font-semibold text-black">
+
+          This little gift comes with a big wish:
+          May our friendship always stay strong,
+          our memories keep growing,
+          and our laughter never end! 🥰🎉
+
+        </p>
+
+      </section>
+
+
+      <!-- STEP 4 -->
+      <section class="step w-full" data-step="3">
+
+        <div class="cake mb-8">
+
+          <div class="flame" id="flame"></div>
+
+          <div class="candle"></div>
+
+          <div class="cake-top"></div>
+
+          <div class="cake-base"></div>
+
+        </div>
+
+        <p class="mb-6 text-black/90">
+          Make a wish and blow out the candle! 🎂✨
+        </p>
+
+        <button
+          onclick="blowCandle()"
+          class="bg-pink-600 hover:bg-pink-700 text-black px-8 py-4 rounded-full font-bold shadow-xl transition">
+
+          Blow Candle 🕯️🎂
+
+        </button>
+
+      </section>
+
+
+      <!-- FINAL STEP -->
+      <section class="step w-full" data-step="4">
+
+        <p class="uppercase tracking-[.35em] text-sm text-pink-100 mb-4">
+          A Special Birthday Message
+        </p>
+
+        <h2 class="font-love text-5xl sm:text-7xl mb-6">
+          Happy Birthday , Shrinkhala jii 🎂🥳
+        </h2>
+
+        <div class="max-w-2xl mx-auto text-left bg-white/20 rounded-3xl p-6 border border-white/25">
+
+<p class="text-lg leading-8 text-black/95">
+
+  Happy Birthday, my dear friend! 🎉🎂  
+  I’m really lucky to have a friend like you. ❤️
+
+</p>
+
+<p class="text-lg leading-8 text-black/95 mt-4">
+
+  Thank you for all the fun, laughs, and amazing memories. 😊  
+  May your life always be filled with happiness, success, and lots of smiles! ✨
+
+</p>
+
+<p class="text-lg leading-8 text-black/95 mt-4">
+
+  May all your dreams come true and every new day bring you something wonderful. 🌟
+
+</p>
+
+<p class="text-lg leading-8 text-black/95 mt-4 font-bold">
+
+  Stay happy, keep smiling, and always stay awesome! 🥳❤️  
+  Happy Birthday once again, buddy! 🎂🎈
+
+</p>
+
+        </div>
+
+        <button
+          onclick="restartWish()"
+          class="mt-8 bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">
+
+          Replay the Birthday Magic ✨
+
+        </button>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
